@@ -3,7 +3,7 @@ var util = require('util');
 var GameMath = require('game-math');
 
 var RequestAnimation = (function() {
-    
+
     // Constructor function
     function RequestAnimation(fps, callback) {
         EventEmitter.call(this);
@@ -87,6 +87,7 @@ var RequestAnimation = (function() {
     // Inherit from EventEmitter
     util.inherits(RequestAnimation, EventEmitter);
 
+    return RequestAnimation;
 })();
 
 module.exports = RequestAnimation;
