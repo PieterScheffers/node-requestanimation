@@ -7,8 +7,9 @@ var RequestAnimation = (function() {
     // Constructor function
     function RequestAnimation(fps, callback) {
         EventEmitter.call(this);
+        fps = fps || 60;
 
-        this.changeFPS(fps || 60);
+        this.changeFPS(fps);
 
         this._raf = null;
         this._callback = this.changeCallback(callback);
