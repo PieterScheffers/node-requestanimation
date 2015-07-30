@@ -26,21 +26,22 @@ RequestAnimation.prototype._loop = function() {
     if( this._fps === 60 || dt > this.interval ) {
 
         // Emit frame event for event handling
-        this.emit('frame', dt);
+        this.emit('frame', dt, now, this.oldTime);
 
         // Call callback
-        if( this._callback ) this._callback(dt);
+        if( this._callback ) this._callback(dt, now, this.oldTime);
 
         // Set oldTime on actual time
         this.oldTime = this._fps === 60 ? now : now - (dt % this.interval);
     }
 
     if( !this._stop ) {
-        this._raf = requestAnimationFrame(this._loop);
+        this._raf = requestAnimationFrame(this._loop.bind(this));
     } else {
         this._raf = null;
     }
 };
+
 
 // Public
 RequestAnimation.prototype.start = function() {
