@@ -1,6 +1,6 @@
 {
   "name": "requestanimation",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "requestAnimationFrame Wrapper",
   "main": "src/requestanimation.js",
   "scripts": {
