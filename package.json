@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/PieterScheffers/node-requestanimation/issues"
   },
-  "homepage": "https://github.com/PieterScheffers/node-requestanimation#readme"
+  "homepage": "https://github.com/PieterScheffers/node-requestanimation#readme",
+  "dependencies": {
+    "game-math": "0.0.7"
+  }
 }
