@@ -10,7 +10,7 @@ function RequestAnimation(fps, callback) {
     this.changeFPS(fps || 60);
 
     this._raf = null;
-    this._callback = this.changeCallback(callback);
+    this.changeCallback(callback);
     this._stop = true;
 }
 
@@ -85,6 +85,10 @@ RequestAnimation.prototype.changeCallback = function(callback) {
 
 RequestAnimation.prototype.hasCallBack = function() {
     return this._callback !== null;
+};
+
+RequestAnimation.prototype.isStarted = function() {
+    return !this._stop;
 };
 
 
